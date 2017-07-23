@@ -23,6 +23,21 @@ ol, ul {
   float: left;
   font-size: 24px;
   font-weight: bold;
+  color: blueviolet;
+  line-height: 34px;
+  height: 33px;
+  padding: 0;
+  text-align: center;
+  width: 33.3%;
+}
+
+.permanent-square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
   line-height: 34px;
   height: 33px;
   padding: 0;

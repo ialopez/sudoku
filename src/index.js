@@ -10,14 +10,33 @@ function Square(props) {
   )
 }
 
+function PermanentSquare(props) {
+  return (
+    <button className="permanent-square">
+      {props.value}
+    </button>
+  )
+}
+
 class Block extends React.Component {
   renderSquare(i, j) {
-    return (
-      <Square
-        value={this.props.squares[i][j]}
-        onClick={() => this.props.onClick(i, j)}
-      />
-    )
+    if(this.props.initial[i][j])
+    {
+      return (
+        <PermanentSquare
+          value={this.props.squares[i][j]}
+        />
+      )
+    }
+    else
+    {
+      return (
+        <Square
+          value={this.props.squares[i][j]}
+          onClick={() => this.props.onClick(i, j)}
+        />
+      )
+    }
   }
 
   render() {
@@ -52,6 +71,7 @@ class Board extends React.Component {
           i: i,
           j: j,
         }}
+        initial={this.props.initial}
         squares={this.props.squares}
         onClick={(i, j) => this.props.onClick(i, j)}
       />
@@ -93,10 +113,6 @@ class Game extends React.Component {
 
   handleClick(i, j) {
     const squares =  this.state.squares.slice().map( function(row){ return row.slice(); });
-    if(this.state.initial[i][j])
-    {
-      return;
-    }
     if (squares[i][j]) {
       squares[i][j]++;
       if (squares[i][j] === 10) {
@@ -125,6 +141,7 @@ class Game extends React.Component {
         </div>
         <div className="game-board">
           <Board 
+            initial={this.state.initial}
             squares={this.state.squares}
             onClick={(i, j) => this.handleClick(i, j)}
           />
