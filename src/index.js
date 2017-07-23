@@ -84,13 +84,19 @@ class Board extends React.Component {
 class Game extends React.Component {
   constructor() {
     super();
+    let initial = initGame();
     this.state = {
-      squares: initGame(),
+      squares: initial,
+      initial: initial,
     };
   }
 
   handleClick(i, j) {
     const squares =  this.state.squares.slice().map( function(row){ return row.slice(); });
+    if(this.state.initial[i][j])
+    {
+      return;
+    }
     if (squares[i][j]) {
       squares[i][j]++;
       if (squares[i][j] === 10) {
