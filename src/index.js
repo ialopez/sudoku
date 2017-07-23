@@ -130,13 +130,29 @@ class Game extends React.Component {
 
 //this function runs genRandomGame until it successfully creates a complete sudoku puzzle
 function initGame() {
+  let game;
   while(true) {
-    let game = genRandomGame();
+    game = genRandomGame();
     if(game)
     {
-      return game;
+      break;
     }
   }
+
+  /*remove some cells so puzzle isn't already complete
+  this is temporary until better alorithm is used */ 
+  for (let i = 0; i < game.length; i++) {
+    for (let j = 0; j < game[i].length; j++) {
+      let rand = Math.random();
+      //70% chance to blank out cell
+      if (rand < 0.7) {
+        game[i][j] = null;
+      }
+    }
+  }
+
+  return game;
+
 }
 
 //here we try to "smartly" use brute force to generate a new sudoku puzzle
