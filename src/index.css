@@ -19,13 +19,14 @@ ol, ul {
 
 .square {
   background: #fff;
+  box-sizing: border-box;
   border: 1px solid #999;
   float: left;
   font-size: 24px;
   font-weight: bold;
   color: blueviolet;
   line-height: 34px;
-  height: 33px;
+  height: 33.3%;
   padding: 0;
   text-align: center;
   width: 33.3%;
@@ -33,16 +34,20 @@ ol, ul {
 
 .permanent-square {
   background: #fff;
+  box-sizing: border-box;
   border: 1px solid #999;
   float: left;
   font-size: 24px;
   font-weight: bold;
   color: black;
   line-height: 34px;
-  height: 33px;
+  height: 33.3%;
   padding: 0;
   text-align: center;
   width: 33.3%;
+
+  color: transparent;
+  text-shadow: 0 0 0 #000;
 }
 
 .board-block {
