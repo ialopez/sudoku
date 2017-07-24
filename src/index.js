@@ -153,13 +153,13 @@ class Game extends React.Component {
     const isFinished = checkBoard(this.state.squares);
     let status;
     if (isFinished) {
-      status = 'you are winner YAYYY';
+      status = 'Congratulations! you finished the puzzle';
     }
     return (
       <div className="game">
         <div className="game-info">
           <div>Sudoku</div>
-          <div>{status}</div>
+          <div className="win-status" >{status}</div>
         </div>
         <div className="game-board">
           <Board 

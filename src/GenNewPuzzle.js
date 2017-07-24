@@ -20,7 +20,6 @@ export function initGame() {
       }
     }
   }
-
   return game;
 
 }

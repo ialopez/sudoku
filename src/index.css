@@ -77,3 +77,9 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
+
+.win-status {
+  font-size: 22px;
+  font-weight: bold;
+  color: green;
+}
